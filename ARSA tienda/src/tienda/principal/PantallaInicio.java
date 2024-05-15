@@ -24,6 +24,7 @@ public class PantallaInicio extends JFrame {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		System.out.println("Bienvenido a la tienda");
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -68,4 +69,5 @@ public class PantallaInicio extends JFrame {
 		lblNewLabel.setBounds(115, 58, 45, 13);
 		contentPane.add(lblNewLabel);
 	}
+	
 }

@@ -7,6 +7,7 @@ public class Factura implements Iterable<Producto>{
 	
 	private static int cont=0;
 	private String codFactura="";
+	private double Precio;
 	private Empleado empleado;
 	private ArrayList<Producto> listaProductos;
 	

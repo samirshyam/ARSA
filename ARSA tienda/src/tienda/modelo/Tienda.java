@@ -4,18 +4,16 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class Tienda {
-	private String nombreTienda;
-	private String direccion;
 	private ArrayList<Empleado> listaEmpleados;
 	private ArrayList<Producto> listaProductos;
 	private ArrayList<Factura> listaFacturas;
 	private ArrayList<Carga> listaCargas;
 	
-	public Tienda(String nombreTienda, String direccion) {
+	public Tienda() {
 		listaEmpleados = new ArrayList<>();
 		listaProductos = new ArrayList<>();
-		this.nombreTienda=nombreTienda;
-		this.direccion=direccion;
+		listaFacturas = new ArrayList<>();
+		listaCargas = new ArrayList<>();
 	}
 	
 	public void annadirEmpleado(Empleado empleado) {
@@ -50,7 +48,7 @@ public class Tienda {
 		return false;
 	}
 	
-	public void codEmpleado(Empleado empleado) {
+	private void codEmpleado(Empleado empleado) {
 		if (empleado instanceof Supervisor) {
 			empleado.setCodEmpleado("SUP"+empleado.getDni().substring(0, 8));
 		}
@@ -59,11 +57,11 @@ public class Tienda {
 		}
 	}
 	
-	public void codProducto(Producto producto) {
+	private void codProducto(Producto producto) {
 		producto.setCodProducto(producto.getSeccionProducto().substring(0,4)+"_"+producto.getNombreProducto());
 	}
 	
-	public Empleado buscarEmpleado(String dni) {
+	private Empleado buscarEmpleado(String dni) {
 		for (Empleado i: listaEmpleados) {
 			if (i.getDni().equals(dni)) {
 				return i;
@@ -72,7 +70,7 @@ public class Tienda {
 		return null;
 	}
 	
-	public Producto buscarProducto(String nombreProducto) {
+	private Producto buscarProducto(String nombreProducto) {
 		for (Producto i: listaProductos) {
 			if (i.getNombreProducto().equals(nombreProducto)) {
 				return i;

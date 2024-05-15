@@ -8,6 +8,8 @@ public class Tienda {
 	private String direccion;
 	private ArrayList<Empleado> listaEmpleados;
 	private ArrayList<Producto> listaProductos;
+	private ArrayList<Factura> listaFacturas;
+	private ArrayList<Carga> listaCargas;
 	
 	public Tienda(String nombreTienda, String direccion) {
 		listaEmpleados = new ArrayList<>();
@@ -119,5 +121,15 @@ public class Tienda {
 			}
 		}
 		return false;
+	}
+	
+	public void crearFactura(String dni) {
+		Factura factura= new Factura(buscarEmpleado(dni));
+		listaFacturas.add(factura);
+	}
+	
+	public void crearCarga(String dni) {
+		Carga carga= new Carga(buscarEmpleado(dni));
+		listaCargas.add(carga);
 	}
 }

@@ -14,6 +14,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.SwingConstants;
+import javax.swing.JLabel;
 
 public class PantallaInicio extends JFrame {
 
@@ -62,5 +63,9 @@ public class PantallaInicio extends JFrame {
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setBounds(115, 58, 45, 13);
+		contentPane.add(lblNewLabel);
 	}
 }

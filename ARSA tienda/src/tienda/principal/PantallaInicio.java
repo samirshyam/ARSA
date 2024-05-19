@@ -15,6 +15,7 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.SwingConstants;
 import javax.swing.JLabel;
+import javax.swing.ImageIcon;
 
 public class PantallaInicio extends JFrame {
 
@@ -49,25 +50,56 @@ public class PantallaInicio extends JFrame {
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 		
-		JMenu empleadosMeu = new JMenu("Empleados");
-		menuBar.add(empleadosMeu);
+		JMenu EmpleadosMenu = new JMenu("Empleados");
+		menuBar.add(EmpleadosMenu);
 		
-		JMenuItem mntmNewMenuItem = new JMenuItem("Dar de Alta");
-		mntmNewMenuItem.setHorizontalAlignment(SwingConstants.CENTER);
-		empleadosMeu.add(mntmNewMenuItem);
+		JMenuItem DarAltaEmpleadosMenuItem = new JMenuItem("Alta Empleado");
+		DarAltaEmpleadosMenuItem.setHorizontalAlignment(SwingConstants.CENTER);
+		EmpleadosMenu.add(DarAltaEmpleadosMenuItem);
 		
-		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Dar de Baja");
-		mntmNewMenuItem_1.setHorizontalAlignment(SwingConstants.CENTER);
-		empleadosMeu.add(mntmNewMenuItem_1);
+		JMenuItem DarBajaEmpleadosNewMenuItem = new JMenuItem("Baja Empleado");
+		DarBajaEmpleadosNewMenuItem.setHorizontalAlignment(SwingConstants.CENTER);
+		EmpleadosMenu.add(DarBajaEmpleadosNewMenuItem);
+		
+		JMenuItem ActualizarPosicionEmpleadosNewMenuItem_1 = new JMenuItem("Actualizar Posición");
+		ActualizarPosicionEmpleadosNewMenuItem_1.setHorizontalAlignment(SwingConstants.CENTER);
+		EmpleadosMenu.add(ActualizarPosicionEmpleadosNewMenuItem_1);
+		
+		JMenu ProductosMenu = new JMenu("Productos");
+		menuBar.add(ProductosMenu);
+		
+		JMenuItem DarAltaProductoMenuItem = new JMenuItem("Alta Producto");
+		DarAltaProductoMenuItem.setHorizontalAlignment(SwingConstants.CENTER);
+		ProductosMenu.add(DarAltaProductoMenuItem);
+		
+		JMenuItem DarBajaProductoMenuItem = new JMenuItem("Baja Producto");
+		DarBajaProductoMenuItem.setHorizontalAlignment(SwingConstants.CENTER);
+		ProductosMenu.add(DarBajaProductoMenuItem);
+		
+		JMenuItem ActualizarProductoMenuItem = new JMenuItem("Actualizar Producto");
+		ActualizarProductoMenuItem.setHorizontalAlignment(SwingConstants.CENTER);
+		ProductosMenu.add(ActualizarProductoMenuItem);
+		
+		JMenu ListasMenu = new JMenu("Listas");
+		menuBar.add(ListasMenu);
+		
+		JMenuItem ListaEmpleadosMenuItem = new JMenuItem("Lista Empleados");
+		ListaEmpleadosMenuItem.setHorizontalAlignment(SwingConstants.CENTER);
+		ListasMenu.add(ListaEmpleadosMenuItem);
+		
+		JMenuItem ListaProductosMenuItem = new JMenuItem("Lista Productos");
+		ListaProductosMenuItem.setHorizontalAlignment(SwingConstants.CENTER);
+		ListasMenu.add(ListaProductosMenuItem);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setBounds(115, 58, 45, 13);
-		contentPane.add(lblNewLabel);
+		JLabel FondoLabel = new JLabel("");
+		FondoLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		FondoLabel.setIcon(new ImageIcon("C:\\Users\\Ruben\\Desktop\\Clase\\image_2024-05-19_234116332.jpg"));
+		FondoLabel.setBounds(0, 0, 434, 239);
+		contentPane.add(FondoLabel);
 	}
-	
 }

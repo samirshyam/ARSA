@@ -1,15 +1,11 @@
 ----------------------------------------------
 PROYECTO ENTORNOS DE DESARROLLO Y PROGRAMACIÓN
 Aplicación ARSA
-- Version Actual 0.1
+- Version Actual 0.4
 ----------------------------------------------
 CONTENIDO
--
--
--
--
--
--
+- (Por redactar)
+
 ----------------------------------------------
 Participantes:
 

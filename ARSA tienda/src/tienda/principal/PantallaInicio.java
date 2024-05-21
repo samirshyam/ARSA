@@ -98,7 +98,7 @@ public class PantallaInicio extends JFrame {
 		
 		JLabel FondoLabel = new JLabel("");
 		FondoLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		FondoLabel.setIcon(new ImageIcon("C:\\Users\\Ruben\\Desktop\\Clase\\image_2024-05-19_234116332.jpg"));
+		FondoLabel.setIcon(new ImageIcon(System.getProperty("user.home")+"\\git\\ARSA\\ARSA tienda\\img\\ARSA_Logo.jpg"));
 		FondoLabel.setBounds(0, 0, 434, 239);
 		contentPane.add(FondoLabel);
 	}

@@ -12,13 +12,13 @@ import deportistas.controlador.ConsultaControlador;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
-public class listaEmpleados extends JPanel {
+public class ListaEmpleadosVista extends JPanel {
 	private JTable table;
 
 	/**
 	 * Create the panel.
 	 */
-	public listaEmpleados() {
+	public ListaEmpleadosVista() {
 		setLayout(null);
 		
 		JLabel tituloListaEmpleadosLabel = new JLabel("Lista Empleados");

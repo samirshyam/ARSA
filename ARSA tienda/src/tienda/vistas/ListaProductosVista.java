@@ -9,14 +9,14 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-public class listaProductos extends JPanel {
+public class ListaProductosVista extends JPanel {
 	private JTable ListaProductos;
 	private DefaultTableModel model;
 
 	/**
 	 * Create the panel.
 	 */
-	public listaProductos() {
+	public ListaProductosVista() {
 		setLayout(null);
 		
 		JLabel tituloListaProductosLabel = new JLabel("Lista Productos");

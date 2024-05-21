@@ -12,7 +12,7 @@ import java.awt.Color;
 import javax.swing.JToggleButton;
 import javax.swing.JRadioButton;
 
-public class altaEmpleado extends JPanel {
+public class AltaEmpleadoVista extends JPanel {
 	private JTextField DNItextfield;
 	private JTextField NombretextField;
 	private JTextField TipoEmpleadotextField;
@@ -23,7 +23,7 @@ public class altaEmpleado extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public altaEmpleado() {
+	public AltaEmpleadoVista() {
 		setLayout(null);
 			
 		

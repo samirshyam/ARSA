@@ -8,7 +8,7 @@ import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 
-public class modificarProducto extends JPanel {
+public class ActualizarProductoVista extends JPanel {
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
@@ -18,7 +18,7 @@ public class modificarProducto extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public modificarProducto() {
+	public ActualizarProductoVista() {
 		setLayout(null);
 		
 		JLabel tituloActualizarProductoLabel = new JLabel("Actualizar Producto");

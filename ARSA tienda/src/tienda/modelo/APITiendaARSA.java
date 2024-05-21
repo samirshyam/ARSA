@@ -48,11 +48,27 @@ public class APITiendaARSA {
 		tienda.actualizarPosicion(dni, tipoEmpleado);
 	}
 	
+	public Empleado buscarEmpleado(String dni) {
+		return tienda.buscarEmpleado(dni);
+	}
+	
+	public Producto buscarProducto(String nombreProducto) {
+		return tienda.buscarProducto(nombreProducto);
+	}
+	
 	public void crearFactura(String dni) {
 		tienda.crearFactura(dni);
 	}
 	
 	public void crearCarga(String dni) {
 		tienda.crearCarga(dni);
+	}
+	
+	public void annadirProductoFactura(Factura factura,String nombreProducto) {
+		tienda.annadirProductoFactura(factura, nombreProducto);
+	}
+	
+	public void precioFacura(Factura factura) {
+		tienda.precioFactura(factura);
 	}
 }

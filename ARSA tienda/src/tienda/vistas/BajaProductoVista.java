@@ -8,13 +8,13 @@ import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 
-public class bajaProducto extends JPanel {
+public class BajaProductoVista extends JPanel {
 	private JTextField textField;
 
 	/**
 	 * Create the panel.
 	 */
-	public bajaProducto() {
+	public BajaProductoVista() {
 		setLayout(null);
 		
 		JLabel tituloBajaProductoLabel = new JLabel("Baja Producto");

@@ -9,13 +9,13 @@ import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
 
-public class modificarEmpleado extends JPanel {
+public class ActualizarEmpleadoVista extends JPanel {
 	private JTextField textField;
 
 	/**
 	 * Create the panel.
 	 */
-	public modificarEmpleado() {
+	public ActualizarEmpleadoVista() {
 		setLayout(null);
 		
 		JLabel tituloActualizarPosicionLabel = new JLabel("Actualizar Posición");

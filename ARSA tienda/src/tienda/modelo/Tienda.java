@@ -61,7 +61,7 @@ public class Tienda {
 		producto.setCodProducto(producto.getSeccionProducto().substring(0,4)+"_"+producto.getNombreProducto());
 	}
 	
-	private Empleado buscarEmpleado(String dni) {
+	public Empleado buscarEmpleado(String dni) {
 		for (Empleado i: listaEmpleados) {
 			if (i.getDni().equals(dni)) {
 				return i;
@@ -70,7 +70,7 @@ public class Tienda {
 		return null;
 	}
 	
-	private Producto buscarProducto(String nombreProducto) {
+	public Producto buscarProducto(String nombreProducto) {
 		for (Producto i: listaProductos) {
 			if (i.getNombreProducto().equals(nombreProducto)) {
 				return i;
@@ -128,6 +128,38 @@ public class Tienda {
 	
 	public void crearCarga(String dni) {
 		Carga carga= new Carga(buscarEmpleado(dni));
+		subirCarga(carga);
 		listaCargas.add(carga);
+	}
+	
+	public void precioFactura(Factura factura) {
+		factura.precioFactura();
+	}
+	
+	private boolean buscarFactura(String codFactura) {
+		for (Factura i : listaFacturas) {
+			if (i.getCodFactura().equals(codFactura)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	private void subirCarga(Carga carga) {
+		for (Producto i: listaProductos) {
+			for (Producto x: carga) {
+				if (i.getNombreProducto().equals(x.getNombreProducto())) {
+					i.setStock(i.getStock()+x.getStock());
+				}
+				else {
+					listaProductos.add(x);
+				}
+			}
+		}
+	}
+	
+	public void annadirProductoFactura(Factura factura,String nombreProducto) {
+		factura.annadirProducto(buscarProducto(nombreProducto));
+		buscarProducto(nombreProducto).setStock(buscarProducto(nombreProducto).getStock()-1);
 	}
 }

@@ -2,14 +2,21 @@ package tienda.vistas;
 
 import javax.swing.JPanel;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.Color;
 import javax.swing.SwingConstants;
+
+import tienda.controlador.AltaEmpleadoControlador;
+
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JSeparator;
 
-public class AltaSupervisorVista extends JPanel {
+public class AltaSupervisorVista extends JPanel implements ActionListener {
 	private JTextField DNItextfield;
 	private JTextField NombretextField;
 	private JTextField TipoEmpleadotextField;
@@ -17,10 +24,11 @@ public class AltaSupervisorVista extends JPanel {
 	private JTextField TurnotextField;
 	private JTextField textField;
 	private JTextField textField_1;
+	private JButton btnSiguiente;
+	private JButton btnAadir;
+	private AltaEmpleadoControlador a = new AltaEmpleadoControlador();
+	private JTextField seccionTextField;
 
-	/**
-	 * Create the panel.
-	 */
 	public AltaSupervisorVista() {
 		setLayout(null);
 		setSize(540, 350);
@@ -56,7 +64,7 @@ public class AltaSupervisorVista extends JPanel {
 		NombretextField.setBounds(160, 93, 226, 20);
 		add(NombretextField);
 		
-		JLabel PuestoLabel = new JLabel("Puesto");
+		JLabel PuestoLabel = new JLabel("Puesto y Seccion");
 		PuestoLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		PuestoLabel.setFont(new Font("Tahoma", Font.BOLD, 11));
 		PuestoLabel.setBounds(45, 127, 105, 14);
@@ -65,7 +73,7 @@ public class AltaSupervisorVista extends JPanel {
 		TipoEmpleadotextField = new JTextField();
 		TipoEmpleadotextField.setHorizontalAlignment(SwingConstants.CENTER);
 		TipoEmpleadotextField.setColumns(10);
-		TipoEmpleadotextField.setBounds(160, 124, 226, 20);
+		TipoEmpleadotextField.setBounds(160, 124, 105, 20);
 		add(TipoEmpleadotextField);
 		
 		JLabel SueldoLabel = new JLabel("Sueldo");
@@ -92,20 +100,22 @@ public class AltaSupervisorVista extends JPanel {
 		TurnotextField.setBounds(160, 186, 226, 20);
 		add(TurnotextField);
 		
-		JButton btnSiguiente = new JButton("Enviar");
+		btnSiguiente = new JButton("Enviar");
 		btnSiguiente.setBackground(new Color(255, 51, 102));
 		btnSiguiente.setBounds(224, 216, 89, 23);
 		add(btnSiguiente);
+		btnSiguiente.addActionListener(this);
 		
 		JPanel FondoTextoAltaEmpleado = new JPanel();
 		FondoTextoAltaEmpleado.setBackground(new Color(255, 51, 102));
 		FondoTextoAltaEmpleado.setBounds(160, 11, 226, 23);
 		add(FondoTextoAltaEmpleado);
 		
-		JButton btnAadir = new JButton("Añadir Empleado");
+		btnAadir = new JButton("Añadir Empleado");
 		btnAadir.setBackground(new Color(102, 153, 255));
 		btnAadir.setBounds(160, 313, 226, 23);
 		add(btnAadir);
+		btnAadir.addActionListener(this);
 		
 		JSeparator separator = new JSeparator();
 		separator.setBounds(160, 248, 226, 8);
@@ -135,5 +145,41 @@ public class AltaSupervisorVista extends JPanel {
 		textField_1.setBounds(291, 280, 95, 20);
 		add(textField_1);
 		
+		seccionTextField = new JTextField();
+		seccionTextField.setHorizontalAlignment(SwingConstants.CENTER);
+		seccionTextField.setColumns(10);
+		seccionTextField.setBounds(281, 124, 105, 20);
+		add(seccionTextField);
+		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btnSiguiente) {
+			try {
+				String dni = DNItextfield.getText();
+				String nombre = NombretextField.getText();
+				String puesto = TipoEmpleadotextField.getText();
+				Double sueldo = Double.parseDouble(SueldotextField.getText());
+				String turno = TurnotextField.getText();
+				String seccion = seccionTextField.getText();
+				a.altaSupervisor(nombre, dni, puesto, sueldo, turno, seccion);
+				JOptionPane.showMessageDialog(JOptionPane.getFrameForComponent(btnSiguiente),"Alta Correcta");
+			}catch(Exception exception) {
+				System.out.println(exception.getMessage());
+				JOptionPane.showMessageDialog(JOptionPane.getFrameForComponent(btnSiguiente),"Formato incorrecto"); 	
+			}
+		}
+		else if (e.getSource() == btnAadir) {
+			try {
+				String dniSupervisor=textField.getText();
+				String dniEmpleado=textField_1.getText();
+				a.annadirEmpleadoBajoSupervisor(a.buscarEmpleado(dniSupervisor), dniEmpleado);
+				JOptionPane.showMessageDialog(JOptionPane.getFrameForComponent(btnAadir),"Alta Correcta");
+			}catch(Exception exception) {
+				System.out.println(exception.getMessage());
+				JOptionPane.showMessageDialog(JOptionPane.getFrameForComponent(btnAadir),"Formato incorrecto"); 	
+			}
+		}
 	}
 }

@@ -8,4 +8,6 @@ public interface AltaEmpleadoInterface {
 	public void altaSupervisor(String nombreEmpleado, String dni, String tipoEmpleado, double sueldo, String turno, String seccion);
 	
 	public void annadirEmpleadoBajoSupervisor(Empleado supervisor, String dni);
+	
+	public Empleado buscarEmpleado(String dni);
 }

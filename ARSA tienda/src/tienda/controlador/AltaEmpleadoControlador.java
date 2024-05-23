@@ -26,6 +26,11 @@ public class AltaEmpleadoControlador implements AltaEmpleadoInterface{
 			String seccion) {
 		api.altaSupervisor(nombreEmpleado, dni, tipoEmpleado, sueldo, turno, seccion);
 	}
+
+	@Override
+	public Empleado buscarEmpleado(String dni) {
+		return api.buscarEmpleado(dni);
+	}
 	
 	
 }

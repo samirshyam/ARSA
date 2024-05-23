@@ -23,7 +23,9 @@ import tienda.vistas.AltaEmpleadoVista;
 import tienda.vistas.AltaProductoVista;
 import tienda.vistas.BajaEmpleadoVista;
 import tienda.vistas.BajaProductoVista;
+import tienda.vistas.ListaCargasVista;
 import tienda.vistas.ListaEmpleadosVista;
+import tienda.vistas.ListaFacturasVista;
 import tienda.vistas.ListaProductosVista;
 
 public class PantallaInicio extends JFrame implements ActionListener {
@@ -55,7 +57,7 @@ public class PantallaInicio extends JFrame implements ActionListener {
         setTitle("ARSA");
         setForeground(new Color(128, 128, 192));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(100, 100, 450, 300);
+        setBounds(100, 100, 540, 400);
 
   
         
@@ -189,8 +191,8 @@ public class PantallaInicio extends JFrame implements ActionListener {
 
         JLabel FondoLabel = new JLabel("");
         FondoLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        FondoLabel.setIcon(new ImageIcon(System.getProperty("user.home") + "\\git\\ARSA\\ARSA tienda\\img\\ARSA_Logo.jpg"));
-        FondoLabel.setBounds(0, 0, 434, 239);
+        FondoLabel.setIcon(new ImageIcon("C:\\Users\\samee\\Downloads\\image_2024-05-23_233216423.jpg"));
+        FondoLabel.setBounds(-121, -10, 767, 360);
         contentPane.add(FondoLabel);
 
         Inicio = contentPane; // Store the initial content pane
@@ -243,6 +245,18 @@ public class PantallaInicio extends JFrame implements ActionListener {
         else if (e.getSource() == ListaProductosMenuItem) {
         	System.out.println("Listando Productos");
         	ListaProductosVista a = new ListaProductosVista();
+        	setContentPane(a);
+            setVisible(true);
+        }
+        else if (e.getSource() == ListaFacturasMenuItem) {
+        	System.out.println("Listando Facturas");
+        	ListaFacturasVista a = new ListaFacturasVista();
+        	setContentPane(a);
+            setVisible(true);
+        }
+        else if (e.getSource() == ListaCargasMenuItem) {
+        	System.out.println("Listando Cargas");
+        	ListaCargasVista a = new ListaCargasVista();
         	setContentPane(a);
             setVisible(true);
         }

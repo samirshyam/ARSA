@@ -4,7 +4,9 @@ import tienda.modelo.Empleado;
 
 public interface BajaEmpleadoInterface {
 	
+	public void buscarEmpleado(String dni);
+	
 	public void borrarEmpleado(String dni);
 	
-	public boolean borrarEmpleadoBajoSupervisor(Empleado supervisor, String dni);
+	public void borrarEmpleadoBajoSupervisor(Empleado supervisor, String dni);
 }

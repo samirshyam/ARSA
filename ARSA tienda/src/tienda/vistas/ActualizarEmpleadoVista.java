@@ -2,15 +2,25 @@ package tienda.vistas;
 
 import javax.swing.JPanel;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.Color;
 import javax.swing.SwingConstants;
+
+import tienda.controlador.ActualizarEmpleadoControlador;
+
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
 
-public class ActualizarEmpleadoVista extends JPanel {
-	private JTextField textField;
+public class ActualizarEmpleadoVista extends JPanel implements ActionListener {
+	private JTextField dniTextField;
+	private JButton EnviarButton;
+	private JTextField puestoTextField;
+	private ActualizarEmpleadoControlador a = new ActualizarEmpleadoControlador();
 
 	/**
 	 * Create the panel.
@@ -31,11 +41,11 @@ public class ActualizarEmpleadoVista extends JPanel {
 		DNILabel.setBounds(0, 117, 105, 14);
 		add(DNILabel);
 		
-		textField = new JTextField();
-		textField.setHorizontalAlignment(SwingConstants.CENTER);
-		textField.setColumns(10);
-		textField.setBounds(115, 114, 226, 20);
-		add(textField);
+		dniTextField = new JTextField();
+		dniTextField.setHorizontalAlignment(SwingConstants.CENTER);
+		dniTextField.setColumns(10);
+		dniTextField.setBounds(115, 114, 226, 20);
+		add(dniTextField);
 		
 		JPanel FondoTextoAltaEmpleado = new JPanel();
 		FondoTextoAltaEmpleado.setBackground(new Color(204, 153, 255));
@@ -48,20 +58,30 @@ public class ActualizarEmpleadoVista extends JPanel {
 		PuestoLabel.setBounds(0, 149, 105, 14);
 		add(PuestoLabel);
 		
-		JComboBox ListaPuesto = new JComboBox();
-		ListaPuesto.setBounds(115, 145, 226, 22);
-		add(ListaPuesto);
-		
-		ListaPuesto.addItem("1");
-		ListaPuesto.addItem("2");
-		ListaPuesto.addItem("3");
-		ListaPuesto.addItem("4");
-		ListaPuesto.addItem("5");
-		
-		JButton EnviarButton = new JButton("Enviar");
+		EnviarButton = new JButton("Enviar");
 		EnviarButton.setBackground(new Color(204, 102, 255));
 		EnviarButton.setBounds(180, 178, 89, 23);
 		add(EnviarButton);
+		EnviarButton.addActionListener(this);
+		
+		puestoTextField = new JTextField();
+		puestoTextField.setHorizontalAlignment(SwingConstants.CENTER);
+		puestoTextField.setColumns(10);
+		puestoTextField.setBounds(115, 147, 226, 20);
+		add(puestoTextField);
 
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		try {
+		String dni = dniTextField.getText();
+		String puesto = puestoTextField.getText();
+		a.actualizarPosicion(dni, puesto);
+		JOptionPane.showMessageDialog(JOptionPane.getFrameForComponent(EnviarButton),"Modificacion Correcta");
+		}catch(Exception exception) {
+			System.out.println(exception.getMessage());
+			JOptionPane.showMessageDialog(JOptionPane.getFrameForComponent(EnviarButton),"Formato incorrecto");
+		}
 	}
 }

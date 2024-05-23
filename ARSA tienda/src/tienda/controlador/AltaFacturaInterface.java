@@ -4,7 +4,7 @@ import tienda.modelo.Factura;
 
 public interface AltaFacturaInterface {
 	
-	public void crearFactura(String dni);
+	public Factura crearFactura(String dni);
 	
 	public void annadirProductoFactura(Factura factura,String nombreProducto);
 	

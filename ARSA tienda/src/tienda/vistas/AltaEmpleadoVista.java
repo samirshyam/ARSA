@@ -1,7 +1,10 @@
 package tienda.vistas;
 
 import javax.swing.JPanel;
+import tienda.controlador.AltaEmpleadoControlador;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
@@ -12,13 +15,15 @@ import java.awt.Color;
 import javax.swing.JToggleButton;
 import javax.swing.JRadioButton;
 
-public class AltaEmpleadoVista extends JPanel {
+public class AltaEmpleadoVista extends JPanel implements ActionListener {
 	private JTextField DNItextfield;
 	private JTextField NombretextField;
 	private JTextField TipoEmpleadotextField;
 	private JTextField SueldotextField;
 	private JTextField TurnotextField;
-	private JTextField textField;
+	private JButton EnviarButton;
+	private AltaEmpleadoControlador a = new AltaEmpleadoControlador();
+	
 
 	/**
 	 * Create the panel.
@@ -49,7 +54,7 @@ public class AltaEmpleadoVista extends JPanel {
 		JLabel NombreLabel = new JLabel("Nombre");
 		NombreLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		NombreLabel.setFont(new Font("Tahoma", Font.BOLD, 11));
-		NombreLabel.setBounds(0, 79, 105, 14);
+		NombreLabel.setBounds(0, 78, 105, 14);
 		add(NombreLabel);
 		
 		NombretextField = new JTextField();
@@ -94,35 +99,32 @@ public class AltaEmpleadoVista extends JPanel {
 		TurnotextField.setBounds(115, 169, 226, 20);
 		add(TurnotextField);
 		
-		JButton EnviarButton = new JButton("Enviar");
+		EnviarButton = new JButton("Enviar");
 		EnviarButton.setBackground(new Color(153, 153, 255));
-		EnviarButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		EnviarButton.setBounds(180, 266, 89, 23);
+		EnviarButton.addActionListener(this);
+		EnviarButton.setBounds(179, 233, 89, 23);
 		add(EnviarButton);
-		
-		JRadioButton rdbtnNewRadioButton = new JRadioButton("Supervisor");
-		rdbtnNewRadioButton.setFont(new Font("Tahoma", Font.BOLD, 12));
-		rdbtnNewRadioButton.setBounds(179, 202, 109, 23);
-		add(rdbtnNewRadioButton);
-		
-		JLabel SeccionLabel = new JLabel("Seccion");
-		SeccionLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		SeccionLabel.setFont(new Font("Tahoma", Font.BOLD, 11));
-		SeccionLabel.setBounds(0, 238, 105, 14);
-		add(SeccionLabel);
-		
-		textField = new JTextField();
-		textField.setHorizontalAlignment(SwingConstants.CENTER);
-		textField.setColumns(10);
-		textField.setBounds(115, 235, 226, 20);
-		add(textField);
 		
 		JPanel FondoTextoAltaEmpleado = new JPanel();
 		FondoTextoAltaEmpleado.setBackground(new Color(153, 153, 255));
 		FondoTextoAltaEmpleado.setBounds(115, 11, 226, 23);
 		add(FondoTextoAltaEmpleado);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		try {
+		String dni = DNItextfield.getText();
+		String nombre = NombretextField.getText();
+		String puesto = TipoEmpleadotextField.getText();
+		Double sueldo = Double.parseDouble(SueldotextField.getText());
+		String turno = TurnotextField.getText();
+		a.altaEmpleado(nombre, dni, puesto, sueldo, turno);
+		JOptionPane.showMessageDialog(JOptionPane.getFrameForComponent(EnviarButton),"Alta Correcta");
+		}catch (Exception exception) {
+			System.out.println(exception.getMessage());
+			JOptionPane.showMessageDialog(JOptionPane.getFrameForComponent(EnviarButton),"Formato incorrecto");
+
+		}
 	}
 }

@@ -2,19 +2,30 @@ package tienda.vistas;
 
 import javax.swing.JPanel;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
+import java.awt.TextField;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.Color;
 import javax.swing.SwingConstants;
+
+import tienda.controlador.AltaProductoControlador;
+
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
 
-public class AltaProductoVista extends JPanel {
+public class AltaProductoVista extends JPanel implements ActionListener {
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
 	private JTextField textField_3;
 	private JTextField textField_4;
+	private JButton EnviarButton;
+	
+	private AltaProductoControlador a = new AltaProductoControlador();
 
 	/**
 	 * Create the panel.
@@ -89,16 +100,33 @@ public class AltaProductoVista extends JPanel {
 		textField_4.setBounds(115, 201, 226, 20);
 		add(textField_4);
 		
-		JButton EnviarButton = new JButton("Enviar");
+		EnviarButton = new JButton("Enviar");
 		EnviarButton.setBackground(new Color(204, 255, 204));
 		EnviarButton.setBounds(180, 232, 89, 23);
 		add(EnviarButton);
+		EnviarButton.addActionListener(this);
 		
 		JPanel FondoTextoAltaEmpleado = new JPanel();
 		FondoTextoAltaEmpleado.setBackground(new Color(204, 255, 204));
 		FondoTextoAltaEmpleado.setBounds(115, 11, 226, 23);
 		add(FondoTextoAltaEmpleado);
 
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		try {
+		String nombre=textField.getText();
+		String seccion=textField_1.getText();
+		String fecha_caducidad=textField_2.getText();
+		Double precio=Double.parseDouble(textField_3.getText());
+		int stock=Integer.parseInt(textField_4.getText());
+		a.altaProducto(nombre, seccion, fecha_caducidad, precio, stock);
+		JOptionPane.showMessageDialog(JOptionPane.getFrameForComponent(EnviarButton),"Alta Correcta");
+		}catch(Exception exception) {
+			System.out.println(exception.getMessage());
+			JOptionPane.showMessageDialog(JOptionPane.getFrameForComponent(EnviarButton),"Formato incorrecto");
+		}
 	}
 
 }

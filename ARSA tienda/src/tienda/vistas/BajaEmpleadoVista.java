@@ -2,14 +2,23 @@ package tienda.vistas;
 
 import javax.swing.JPanel;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.Color;
 import javax.swing.SwingConstants;
+
+import tienda.controlador.BajaEmpleadoControlador;
+
 import javax.swing.JTextField;
 import javax.swing.JButton;
 
-public class BajaEmpleadoVista extends JPanel {
+public class BajaEmpleadoVista extends JPanel implements ActionListener {
 	private JTextField textField;
+	private BajaEmpleadoControlador a = new BajaEmpleadoControlador();
+	private JButton EnviarButton;
 
 	/**
 	 * Create the panel.
@@ -41,11 +50,24 @@ public class BajaEmpleadoVista extends JPanel {
 		FondoTextoBajaEmpleado.setBounds(115, 11, 226, 23);
 		add(FondoTextoBajaEmpleado);
 		
-		JButton EnviarButton = new JButton("Enviar");
+		EnviarButton = new JButton("Enviar");
 		EnviarButton.setBackground(new Color(255, 153, 153));
 		EnviarButton.setBounds(178, 164, 89, 23);
 		add(EnviarButton);
+		EnviarButton.addActionListener(this);
 
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		try {
+		String dni = textField.getText();
+		a.borrarEmpleado(dni);
+		JOptionPane.showMessageDialog(JOptionPane.getFrameForComponent(EnviarButton),"Alta Correcta");
+		}catch(Exception exception) {
+			System.out.println(exception.getMessage());
+			JOptionPane.showMessageDialog(JOptionPane.getFrameForComponent(EnviarButton),"Formato incorrecto");
+		}
 	}
 
 }

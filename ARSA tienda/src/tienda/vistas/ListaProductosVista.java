@@ -8,10 +8,9 @@ import javax.swing.SwingConstants;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import tienda.controlador.ListaProductosControlador;
 
 public class ListaProductosVista extends JPanel {
-	private JTable ListaProductos;
-	private DefaultTableModel model;
 
 	/**
 	 * Create the panel.
@@ -26,31 +25,21 @@ public class ListaProductosVista extends JPanel {
 		tituloListaProductosLabel.setBounds(0, 11, 450, 23);
 		add(tituloListaProductosLabel);
 		
+		ListaProductosControlador a = new ListaProductosControlador();
+		final String[] cabeceraTabla= {"Cod. Producto","Nombre","Seccion.", "Precio", "Stock"};
+		JTable ListaProductos=new JTable(a.listarProductos(),cabeceraTabla) {
+			public boolean isCellEditable(int row, int column) {
+		            return false;
+		         }
+		};
+		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 45, 430, 244);
 		add(scrollPane);
 		
-		ListaProductos = new JTable();
-	
-		model=new DefaultTableModel();
-		ListaProductos.setModel(model);
-		
-		model.addColumn("DNI");
-		model.addColumn("Nombre");
-		model.addColumn("Puesto");
-		model.addColumn("Sueldo");
-		model.addColumn("Turno");
-		model.addColumn("Seccion");
-		
 		scrollPane.setViewportView(ListaProductos);
 		
-		//Video min 11:20
-		
-		
-		JPanel FondoTextoListaProductos = new JPanel();
-		FondoTextoListaProductos.setBackground(Color.WHITE);
-		FondoTextoListaProductos.setBounds(112, 11, 226, 23);
-		add(FondoTextoListaProductos);
+		ListaProductos.setGridColor(Color.BLACK);
 
 	}
 

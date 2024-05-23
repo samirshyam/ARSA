@@ -26,9 +26,10 @@ public class APITiendaARSA {
 		tienda.annadirEmpleado(empleado);
 	}
 	
-	/* */public void altaSupervisor(String nombreEmpleado, String dni, String tipoEmpleado, double sueldo, String turno, String seccion) {
+	/* */public Supervisor altaSupervisor(String nombreEmpleado, String dni, String tipoEmpleado, double sueldo, String turno, String seccion) {
 		Empleado empleado = new Supervisor(nombreEmpleado,dni,tipoEmpleado,sueldo,turno,seccion);
 		tienda.annadirEmpleado(empleado);
+		return (Supervisor) empleado;
 	}
 	
 	/* */public void borrarEmpleado(String dni) {
@@ -68,8 +69,8 @@ public class APITiendaARSA {
 		return tienda.buscarProducto(nombreProducto);
 	}
 	
-	/* */public void crearFactura(String dni) {
-		tienda.crearFactura(dni);
+	/* */public Factura crearFactura(String dni) {
+		return tienda.crearFactura(dni);
 	}
 	
 	/*  */public void crearCarga(String dni) {
@@ -98,7 +99,7 @@ public class APITiendaARSA {
 		return false;
 	}
 	
-	public String[][] listarEmpleados() {
+	/* */public String[][] listarEmpleados() {
 		ArrayList<Empleado> listaEmpleados=tienda.listarEmpleados();
 		String[][] listaEmpleadosArray=new String[listaEmpleados.size()][8];
 		for (int i=0; i<listaEmpleados.size();i++) {
@@ -118,7 +119,7 @@ public class APITiendaARSA {
 		return listaEmpleadosArray;
 	}
 	
-	public String[][] listarProductos() {
+	/* */public String[][] listarProductos() {
 		ArrayList<Producto> listaProductos=tienda.listarProductos();
 		String[][] listaProductosArray=new String[listaProductos.size()][5];
 		for (int i=0; i<listaProductos.size();i++) {
@@ -131,9 +132,9 @@ public class APITiendaARSA {
 		return listaProductosArray;
 	}
 	
-	public String[][] listarCargas() {
+	/* */public String[][] listarCargas() {
 		ArrayList<Carga> listaCargas=tienda.listarCargas();
-		String[][] listaCargasArray=new String[listaCargas.size()][2];
+		String[][] listaCargasArray=new String[listaCargas.size()][3];
 		for (int i=0; i<listaCargas.size();i++) {
 			listaCargasArray[i][0]=listaCargas.get(i).getCodCargo(); 
 			listaCargasArray[i][1]=listaCargas.get(i).getEmpleado().getCodEmpleado();
@@ -145,7 +146,7 @@ public class APITiendaARSA {
 		return listaCargasArray;
 	}
 	
-	public String[][] listarFacturas() {
+	/* */public String[][] listarFacturas() {
 		ArrayList<Factura> listaFacturas=tienda.listarFacturas();
 		String[][] listaFacturasArray=new String[listaFacturas.size()][4];
 		for (int i=0; i<listaFacturas.size();i++) {

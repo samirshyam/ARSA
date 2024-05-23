@@ -121,9 +121,10 @@ public class Tienda {
 		return false;
 	}
 	
-	public void crearFactura(String dni) {
+	public Factura crearFactura(String dni) {
 		Factura factura= new Factura(buscarEmpleado(dni));
 		listaFacturas.add(factura);
+		return factura;
 	}
 	
 	public void crearCarga(String dni) {

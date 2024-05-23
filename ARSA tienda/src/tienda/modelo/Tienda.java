@@ -162,4 +162,20 @@ public class Tienda {
 		factura.annadirProducto(buscarProducto(nombreProducto));
 		buscarProducto(nombreProducto).setStock(buscarProducto(nombreProducto).getStock()-1);
 	}
+	
+	public ArrayList<Empleado> listarEmpleados() {
+		return listaEmpleados;
+	}
+	
+	public ArrayList<Producto> listarProductos() {
+		return listaProductos;
+	}
+	
+	public ArrayList<Factura> listarFacturas() {
+		return listaFacturas;
+	}
+	
+	public ArrayList<Carga> listarCargas() {
+		return listaCargas;
+	}
 }

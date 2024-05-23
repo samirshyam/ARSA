@@ -8,6 +8,19 @@ public class Carga implements Iterable<Producto>{
 	private static int cont=0;
 	private String codCargo="";
 	private Empleado empleado;
+	
+	public String getCodCargo() {
+		return codCargo;
+	}
+
+	public Empleado getEmpleado() {
+		return empleado;
+	}
+
+	public ArrayList<Producto> getListaProductos() {
+		return listaProductos;
+	}
+
 	private ArrayList<Producto> listaProductos;
 	
 	public Carga(Empleado empleado) {

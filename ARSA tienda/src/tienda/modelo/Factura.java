@@ -36,9 +36,16 @@ public class Factura implements Iterable<Producto>{
 		return codFactura;
 	}
 
-	public void setCodFactura(String codFactura) {
-		this.codFactura = codFactura;
+	public Empleado getEmpleado() {
+		return empleado;
 	}
-	
-	
+
+	public double getPrecio() {
+		return Precio;
+	}
+
+	public ArrayList<Producto> getListaProductos() {
+		return listaProductos;
+	}
+
 }

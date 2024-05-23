@@ -43,4 +43,8 @@ public class Supervisor extends Empleado implements Iterable<Empleado>{
 		System.out.println("Supervisor:");
 		return super.toString()+" Seccion:"+this.seccion;
 	}
+	
+	public String getSeccion() {
+		return this.seccion;
+	}
 }

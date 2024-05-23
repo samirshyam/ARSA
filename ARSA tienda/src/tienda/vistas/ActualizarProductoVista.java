@@ -29,83 +29,84 @@ public class ActualizarProductoVista extends JPanel implements ActionListener {
 	 */
 	public ActualizarProductoVista() {
 		setLayout(null);
+		setSize(540, 350);
 		
 		JLabel tituloActualizarProductoLabel = new JLabel("Actualizar Producto");
 		tituloActualizarProductoLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		tituloActualizarProductoLabel.setForeground(Color.BLACK);
 		tituloActualizarProductoLabel.setFont(new Font("Noto Sans Arabic", Font.BOLD, 18));
-		tituloActualizarProductoLabel.setBounds(0, 11, 450, 23);
+		tituloActualizarProductoLabel.setBounds(10, 11, 520, 23);
 		add(tituloActualizarProductoLabel);
 		
 		JLabel ProductoNombreLabel = new JLabel("Nombre");
 		ProductoNombreLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		ProductoNombreLabel.setFont(new Font("Tahoma", Font.BOLD, 11));
-		ProductoNombreLabel.setBounds(0, 80, 105, 14);
+		ProductoNombreLabel.setBounds(43, 115, 105, 14);
 		add(ProductoNombreLabel);
 		
 		textField = new JTextField();
 		textField.setHorizontalAlignment(SwingConstants.CENTER);
 		textField.setColumns(10);
-		textField.setBounds(115, 77, 226, 20);
+		textField.setBounds(158, 112, 226, 20);
 		add(textField);
 		
 		JLabel SeccionProductoLabel = new JLabel("Seccion");
 		SeccionProductoLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		SeccionProductoLabel.setFont(new Font("Tahoma", Font.BOLD, 11));
-		SeccionProductoLabel.setBounds(0, 111, 105, 14);
+		SeccionProductoLabel.setBounds(43, 146, 105, 14);
 		add(SeccionProductoLabel);
 		
 		textField_1 = new JTextField();
 		textField_1.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_1.setColumns(10);
-		textField_1.setBounds(115, 108, 226, 20);
+		textField_1.setBounds(158, 143, 226, 20);
 		add(textField_1);
 		
 		JLabel FechaCaducidadLabel = new JLabel("Fecha Caducidad");
 		FechaCaducidadLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		FechaCaducidadLabel.setFont(new Font("Tahoma", Font.BOLD, 11));
-		FechaCaducidadLabel.setBounds(0, 142, 105, 14);
+		FechaCaducidadLabel.setBounds(43, 177, 105, 14);
 		add(FechaCaducidadLabel);
 		
 		textField_2 = new JTextField();
 		textField_2.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_2.setColumns(10);
-		textField_2.setBounds(115, 139, 226, 20);
+		textField_2.setBounds(158, 174, 226, 20);
 		add(textField_2);
 		
 		JLabel PrecioProductoLabel = new JLabel("Precio");
 		PrecioProductoLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		PrecioProductoLabel.setFont(new Font("Tahoma", Font.BOLD, 11));
-		PrecioProductoLabel.setBounds(0, 173, 105, 14);
+		PrecioProductoLabel.setBounds(43, 208, 105, 14);
 		add(PrecioProductoLabel);
 		
 		textField_3 = new JTextField();
 		textField_3.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_3.setColumns(10);
-		textField_3.setBounds(115, 170, 226, 20);
+		textField_3.setBounds(158, 205, 226, 20);
 		add(textField_3);
 		
 		JLabel StockProductoLabel = new JLabel("Stock");
 		StockProductoLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		StockProductoLabel.setFont(new Font("Tahoma", Font.BOLD, 11));
-		StockProductoLabel.setBounds(0, 204, 105, 14);
+		StockProductoLabel.setBounds(43, 239, 105, 14);
 		add(StockProductoLabel);
 		
 		textField_4 = new JTextField();
 		textField_4.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_4.setColumns(10);
-		textField_4.setBounds(115, 201, 226, 20);
+		textField_4.setBounds(158, 236, 226, 20);
 		add(textField_4);
 		
 		EnviarButton = new JButton("Enviar");
 		EnviarButton.setBackground(new Color(153, 153, 153));
-		EnviarButton.setBounds(180, 232, 89, 23);
+		EnviarButton.setBounds(223, 267, 89, 23);
 		add(EnviarButton);
 		EnviarButton.addActionListener(this);
 		
 		JPanel FondoTextoAltaEmpleado = new JPanel();
 		FondoTextoAltaEmpleado.setBackground(new Color(204, 204, 204));
-		FondoTextoAltaEmpleado.setBounds(115, 11, 226, 23);
+		FondoTextoAltaEmpleado.setBounds(158, 11, 226, 23);
 		add(FondoTextoAltaEmpleado);
 
 	}

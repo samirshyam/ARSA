@@ -15,6 +15,7 @@ public class ListaFacturasVista extends JPanel {
 
 	public ListaFacturasVista() {
 		setLayout(null);
+		setSize(540, 350);
 		
 		JLabel tituloListaProductosLabel = new JLabel("Lista Empleados");
 		tituloListaProductosLabel.setHorizontalAlignment(SwingConstants.CENTER);

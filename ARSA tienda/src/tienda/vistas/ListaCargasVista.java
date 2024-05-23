@@ -15,12 +15,13 @@ public class ListaCargasVista extends JPanel {
 	
 	public ListaCargasVista() {
 			setLayout(null);
+			setSize(540, 350);
 			
 			JLabel tituloListaProductosLabel = new JLabel("Lista Empleados");
 			tituloListaProductosLabel.setHorizontalAlignment(SwingConstants.CENTER);
 			tituloListaProductosLabel.setForeground(Color.BLACK);
 			tituloListaProductosLabel.setFont(new Font("Noto Sans Arabic", Font.BOLD, 18));
-			tituloListaProductosLabel.setBounds(0, 11, 450, 23);
+			tituloListaProductosLabel.setBounds(10, 11, 520, 23);
 			add(tituloListaProductosLabel);
 			
 			ListarCargasControlador a = new ListarCargasControlador();
@@ -32,7 +33,7 @@ public class ListaCargasVista extends JPanel {
 			};
 			
 			JScrollPane scrollPane = new JScrollPane();
-			scrollPane.setBounds(10, 45, 430, 244);
+			scrollPane.setBounds(53, 45, 430, 266);
 			add(scrollPane);
 			
 			scrollPane.setViewportView(ListaCargas);
@@ -42,7 +43,7 @@ public class ListaCargasVista extends JPanel {
 			
 			JPanel FondoTextoListaProductos = new JPanel();
 			FondoTextoListaProductos.setBackground(Color.WHITE);
-			FondoTextoListaProductos.setBounds(112, 11, 226, 23);
+			FondoTextoListaProductos.setBounds(160, 11, 226, 23);
 			add(FondoTextoListaProductos);
 
 		}

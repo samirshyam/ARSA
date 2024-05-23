@@ -57,10 +57,33 @@ public class PantallaInicio extends JFrame implements ActionListener {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 450, 300);
 
+  
+        
         /* JFRAME AREA FROM HERE */
 
         JMenuBar menuBar = new JMenuBar();
         setJMenuBar(menuBar);
+        
+                JMenu InicioMenu = new JMenu("Inicio");
+                InicioMenu.setFont(new Font("Segoe UI", Font.BOLD, 14));
+                InicioMenu.setForeground(new Color(255, 0, 0));
+                InicioMenu.setBackground(new Color(255, 255, 255));
+                menuBar.add(InicioMenu);
+                
+                        // Creating a menu item for "Inicio"
+                        JMenuItem inicioMenuItem = new JMenuItem("Inicio");
+                        inicioMenuItem.setFont(new Font("Segoe UI", Font.BOLD, 14));
+                        inicioMenuItem.setForeground(new Color(255, 0, 0));
+                        inicioMenuItem.setHorizontalAlignment(SwingConstants.LEFT);
+                        InicioMenu.add(inicioMenuItem);
+                        inicioMenuItem.addActionListener(new ActionListener() {
+                            public void actionPerformed(ActionEvent e) {
+                            	System.out.println("Inicio...");
+                                setContentPane(Inicio);
+                                revalidate();
+                                repaint();
+                            }
+                        });
 
         JMenu EmpleadosMenu = new JMenu("Empleados");
         menuBar.add(EmpleadosMenu);
@@ -74,6 +97,9 @@ public class PantallaInicio extends JFrame implements ActionListener {
         DarBajaEmpleadosNewMenuItem.setHorizontalAlignment(SwingConstants.LEFT);
         EmpleadosMenu.add(DarBajaEmpleadosNewMenuItem);
         DarBajaEmpleadosNewMenuItem.addActionListener(this);
+        
+        JSeparator separator = new JSeparator();
+        EmpleadosMenu.add(separator);
 
         ActualizarPosicionEmpleadosMenuItem = new JMenuItem("Actualizar Posición");
         ActualizarPosicionEmpleadosMenuItem.setHorizontalAlignment(SwingConstants.LEFT);
@@ -105,6 +131,9 @@ public class PantallaInicio extends JFrame implements ActionListener {
         DarBajaProductoMenuItem.setHorizontalAlignment(SwingConstants.LEFT);
         ProductosMenu.add(DarBajaProductoMenuItem);
         DarBajaProductoMenuItem.addActionListener(this);
+        
+        JSeparator separator_1 = new JSeparator();
+        ProductosMenu.add(separator_1);
 
         ActualizarProductoMenuItem = new JMenuItem("Actualizar Producto");
         ActualizarProductoMenuItem.setHorizontalAlignment(SwingConstants.LEFT);
@@ -151,35 +180,10 @@ public class PantallaInicio extends JFrame implements ActionListener {
         ListasMenu.add(ListaCargasMenuItem);
         ListaCargasMenuItem.addActionListener(this);
 
-        JSeparator separator = new JSeparator();
-        menuBar.add(separator);
-
-        JMenu InicioMenu = new JMenu("Inicio");
-        InicioMenu.setFont(new Font("Segoe UI", Font.BOLD, 14));
-        InicioMenu.setForeground(new Color(255, 0, 0));
-        InicioMenu.setBackground(new Color(255, 255, 255));
-        menuBar.add(InicioMenu);
-
-        // Creating a menu item for "Inicio"
-        JMenuItem inicioMenuItem = new JMenuItem("Inicio");
-        inicioMenuItem.setFont(new Font("Segoe UI", Font.BOLD, 14));
-        inicioMenuItem.setForeground(new Color(255, 0, 0));
-        inicioMenuItem.setHorizontalAlignment(SwingConstants.LEFT);
-        InicioMenu.add(inicioMenuItem);
-        inicioMenuItem.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-            	System.out.println("Inicio...");
-                setContentPane(Inicio);
-                revalidate();
-                repaint();
-            }
-        });
-
         /* CONTENT PANE AREA FROM HERE */
 
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-
         setContentPane(contentPane);
         contentPane.setLayout(null);
 

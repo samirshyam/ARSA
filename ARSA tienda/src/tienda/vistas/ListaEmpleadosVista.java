@@ -23,12 +23,13 @@ public class ListaEmpleadosVista extends JPanel {
 	 */
 	public ListaEmpleadosVista() {
 		setLayout(null);
+		setSize(540, 350);
 		
 		JLabel tituloListaProductosLabel = new JLabel("Lista Empleados");
 		tituloListaProductosLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		tituloListaProductosLabel.setForeground(Color.BLACK);
 		tituloListaProductosLabel.setFont(new Font("Noto Sans Arabic", Font.BOLD, 18));
-		tituloListaProductosLabel.setBounds(0, 11, 450, 23);
+		tituloListaProductosLabel.setBounds(10, 11, 520, 23);
 		add(tituloListaProductosLabel);
 		
 		ListarEmpleadosControlador a = new ListarEmpleadosControlador();
@@ -42,7 +43,7 @@ public class ListaEmpleadosVista extends JPanel {
 		ListaEmpleados.setGridColor(Color.BLACK);
 		
 		JScrollPane scrollPane = new JScrollPane(ListaEmpleados);
-		scrollPane.setBounds(10, 32, 400, 200);
+		scrollPane.setBounds(60, 56, 400, 200);
 		add(scrollPane);
 	}
 }

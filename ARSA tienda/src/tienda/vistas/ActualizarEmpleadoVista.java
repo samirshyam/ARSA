@@ -27,47 +27,48 @@ public class ActualizarEmpleadoVista extends JPanel implements ActionListener {
 	 */
 	public ActualizarEmpleadoVista() {
 		setLayout(null);
+		setSize(540, 350);
 		
 		JLabel tituloActualizarPosicionLabel = new JLabel("Actualizar Posición");
 		tituloActualizarPosicionLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		tituloActualizarPosicionLabel.setForeground(Color.BLACK);
 		tituloActualizarPosicionLabel.setFont(new Font("Noto Sans Arabic", Font.BOLD, 18));
-		tituloActualizarPosicionLabel.setBounds(0, 12, 450, 23);
+		tituloActualizarPosicionLabel.setBounds(10, 11, 520, 23);
 		add(tituloActualizarPosicionLabel);
 		
 		JLabel DNILabel = new JLabel("DNI");
 		DNILabel.setHorizontalAlignment(SwingConstants.CENTER);
 		DNILabel.setFont(new Font("Tahoma", Font.BOLD, 11));
-		DNILabel.setBounds(0, 117, 105, 14);
+		DNILabel.setBounds(39, 128, 105, 14);
 		add(DNILabel);
 		
 		dniTextField = new JTextField();
 		dniTextField.setHorizontalAlignment(SwingConstants.CENTER);
 		dniTextField.setColumns(10);
-		dniTextField.setBounds(115, 114, 226, 20);
+		dniTextField.setBounds(154, 125, 226, 20);
 		add(dniTextField);
 		
 		JPanel FondoTextoAltaEmpleado = new JPanel();
-		FondoTextoAltaEmpleado.setBackground(new Color(204, 153, 255));
-		FondoTextoAltaEmpleado.setBounds(115, 11, 226, 23);
+		FondoTextoAltaEmpleado.setBackground(new Color(102, 153, 255));
+		FondoTextoAltaEmpleado.setBounds(154, 11, 226, 23);
 		add(FondoTextoAltaEmpleado);
 		
 		JLabel PuestoLabel = new JLabel("Puesto");
 		PuestoLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		PuestoLabel.setFont(new Font("Tahoma", Font.BOLD, 11));
-		PuestoLabel.setBounds(0, 149, 105, 14);
+		PuestoLabel.setBounds(39, 160, 105, 14);
 		add(PuestoLabel);
 		
 		EnviarButton = new JButton("Enviar");
-		EnviarButton.setBackground(new Color(204, 102, 255));
-		EnviarButton.setBounds(180, 178, 89, 23);
+		EnviarButton.setBackground(new Color(102, 153, 255));
+		EnviarButton.setBounds(221, 224, 89, 23);
 		add(EnviarButton);
 		EnviarButton.addActionListener(this);
 		
 		puestoTextField = new JTextField();
 		puestoTextField.setHorizontalAlignment(SwingConstants.CENTER);
 		puestoTextField.setColumns(10);
-		puestoTextField.setBounds(115, 147, 226, 20);
+		puestoTextField.setBounds(154, 158, 226, 20);
 		add(puestoTextField);
 
 	}

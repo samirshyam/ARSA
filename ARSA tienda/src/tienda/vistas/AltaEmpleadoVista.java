@@ -47,6 +47,7 @@ public class AltaEmpleadoVista extends JPanel implements ActionListener {
 		add(DNILabel);
 		
 		DNItextfield = new JTextField();
+		DNItextfield.setToolTipText("");
 		DNItextfield.setHorizontalAlignment(SwingConstants.CENTER);
 		DNItextfield.setBounds(160, 102, 226, 20);
 		add(DNItextfield);

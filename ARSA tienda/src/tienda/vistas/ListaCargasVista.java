@@ -17,13 +17,6 @@ public class ListaCargasVista extends JPanel {
 			setLayout(null);
 			setSize(540, 350);
 			
-			JLabel tituloListaProductosLabel = new JLabel("Lista Empleados");
-			tituloListaProductosLabel.setHorizontalAlignment(SwingConstants.CENTER);
-			tituloListaProductosLabel.setForeground(Color.BLACK);
-			tituloListaProductosLabel.setFont(new Font("Noto Sans Arabic", Font.BOLD, 18));
-			tituloListaProductosLabel.setBounds(10, 11, 520, 23);
-			add(tituloListaProductosLabel);
-			
 			ListarCargasControlador a = new ListarCargasControlador();
 			final String[] cabeceraTabla= {"Cod. Cargo","Cod. Empleado","Productos"};
 			JTable ListaCargas=new JTable(a.listarCargas(),cabeceraTabla) {
@@ -33,18 +26,24 @@ public class ListaCargasVista extends JPanel {
 			};
 			
 			JScrollPane scrollPane = new JScrollPane();
-			scrollPane.setBounds(53, 45, 430, 266);
+			scrollPane.setBounds(27, 65, 470, 244);
 			add(scrollPane);
 			
 			scrollPane.setViewportView(ListaCargas);
 			
 			ListaCargas.setGridColor(Color.BLACK);
 			
+			JLabel tituloListaCargasLabel = new JLabel("Lista Cargas");
+			tituloListaCargasLabel.setHorizontalAlignment(SwingConstants.CENTER);
+			tituloListaCargasLabel.setForeground(Color.BLACK);
+			tituloListaCargasLabel.setFont(new Font("Noto Sans Arabic", Font.BOLD, 18));
+			tituloListaCargasLabel.setBounds(10, 11, 520, 23);
+			add(tituloListaCargasLabel);
 			
-			JPanel FondoTextoListaProductos = new JPanel();
-			FondoTextoListaProductos.setBackground(Color.WHITE);
-			FondoTextoListaProductos.setBounds(160, 11, 226, 23);
-			add(FondoTextoListaProductos);
+			JPanel FondoTextoListaProductos_1 = new JPanel();
+			FondoTextoListaProductos_1.setBackground(new Color(204, 255, 255));
+			FondoTextoListaProductos_1.setBounds(155, 11, 226, 23);
+			add(FondoTextoListaProductos_1);
 
 		}
 	}

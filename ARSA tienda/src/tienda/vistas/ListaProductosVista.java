@@ -17,11 +17,11 @@ public class ListaProductosVista extends JPanel {
 	 */
 	public ListaProductosVista() {
 		setLayout(null);
-		setSize(540, 350);
+		setSize(540, 336);
 		
 		JLabel tituloListaProductosLabel = new JLabel("Lista Productos");
 		tituloListaProductosLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		tituloListaProductosLabel.setForeground(Color.BLACK);
+		tituloListaProductosLabel.setForeground(new Color(0, 0, 0));
 		tituloListaProductosLabel.setFont(new Font("Noto Sans Arabic", Font.BOLD, 18));
 		tituloListaProductosLabel.setBounds(10, 11, 520, 23);
 		add(tituloListaProductosLabel);
@@ -35,12 +35,17 @@ public class ListaProductosVista extends JPanel {
 		};
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(45, 60, 430, 244);
+		scrollPane.setBounds(27, 65, 470, 244);
 		add(scrollPane);
 		
 		scrollPane.setViewportView(ListaProductos);
 		
 		ListaProductos.setGridColor(Color.BLACK);
+		
+		JPanel FondoTextoListaProductos = new JPanel();
+		FondoTextoListaProductos.setBackground(new Color(204, 255, 204));
+		FondoTextoListaProductos.setBounds(155, 11, 226, 23);
+		add(FondoTextoListaProductos);
 
 	}
 

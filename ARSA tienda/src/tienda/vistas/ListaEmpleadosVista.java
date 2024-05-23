@@ -43,7 +43,12 @@ public class ListaEmpleadosVista extends JPanel {
 		ListaEmpleados.setGridColor(Color.BLACK);
 		
 		JScrollPane scrollPane = new JScrollPane(ListaEmpleados);
-		scrollPane.setBounds(60, 56, 400, 200);
+		scrollPane.setBounds(27, 65, 470, 244);
 		add(scrollPane);
+		
+		JPanel FondoTextoListaProductos = new JPanel();
+		FondoTextoListaProductos.setBackground(new Color(102, 153, 255));
+		FondoTextoListaProductos.setBounds(155, 11, 226, 23);
+		add(FondoTextoListaProductos);
 	}
 }

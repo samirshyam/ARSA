@@ -99,13 +99,13 @@ public class ActualizarProductoVista extends JPanel implements ActionListener {
 		add(textField_4);
 		
 		EnviarButton = new JButton("Enviar");
-		EnviarButton.setBackground(new Color(153, 153, 153));
+		EnviarButton.setBackground(new Color(204, 255, 204));
 		EnviarButton.setBounds(223, 267, 89, 23);
 		add(EnviarButton);
 		EnviarButton.addActionListener(this);
 		
 		JPanel FondoTextoAltaEmpleado = new JPanel();
-		FondoTextoAltaEmpleado.setBackground(new Color(204, 204, 204));
+		FondoTextoAltaEmpleado.setBackground(new Color(204, 255, 204));
 		FondoTextoAltaEmpleado.setBounds(158, 11, 226, 23);
 		add(FondoTextoAltaEmpleado);
 

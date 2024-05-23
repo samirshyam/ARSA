@@ -191,7 +191,7 @@ public class PantallaInicio extends JFrame implements ActionListener {
 
         JLabel FondoLabel = new JLabel("");
         FondoLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        FondoLabel.setIcon(new ImageIcon("C:\\Users\\samee\\Downloads\\image_2024-05-23_233216423.jpg"));
+        FondoLabel.setIcon(new ImageIcon(System.getProperty("user.home")+"\\git\\ARSA\\ARSA tienda\\img\\arsa_tienda_final.png"));
         FondoLabel.setBounds(-121, -10, 767, 360);
         contentPane.add(FondoLabel);
 

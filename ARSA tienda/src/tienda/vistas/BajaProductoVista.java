@@ -47,13 +47,13 @@ public class BajaProductoVista extends JPanel implements ActionListener {
 		add(textField);
 		
 		EnviarButton = new JButton("Enviar");
-		EnviarButton.setBackground(new Color(255, 153, 153));
+		EnviarButton.setBackground(new Color(204, 255, 204));
 		EnviarButton.setBounds(223, 166, 89, 23);
 		add(EnviarButton);
 		EnviarButton.addActionListener(this);
 		
 		JPanel FondoTextoAltaEmpleado = new JPanel();
-		FondoTextoAltaEmpleado.setBackground(new Color(255, 153, 153));
+		FondoTextoAltaEmpleado.setBackground(new Color(204, 255, 204));
 		FondoTextoAltaEmpleado.setBounds(160, 11, 226, 23);
 		add(FondoTextoAltaEmpleado);
 

@@ -127,8 +127,8 @@ public class Tienda {
 		return factura;
 	}
 	
-	public void crearCarga(String dni) {
-		Carga carga= new Carga(buscarEmpleado(dni));
+	public void crearCarga(String dni, ArrayList<Producto> listaProductos) {
+		Carga carga= new Carga(buscarEmpleado(dni),listaProductos);
 		subirCarga(carga);
 		listaCargas.add(carga);
 	}

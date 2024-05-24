@@ -18,8 +18,8 @@ public class BajaEmpleadoControlador implements BajaEmpleadoInterface{
 	}
 
 	@Override
-	public void buscarEmpleado(String dni) {
-		api.buscarEmpleado(dni);
+	public Empleado buscarEmpleado(String dni) {
+		return api.buscarEmpleado(dni);
 	}
 
 }

@@ -21,8 +21,12 @@ import tienda.vistas.ActualizarEmpleadoVista;
 import tienda.vistas.ActualizarProductoVista;
 import tienda.vistas.AltaEmpleadoVista;
 import tienda.vistas.AltaProductoVista;
+import tienda.vistas.AltaSupervisorVista;
+import tienda.vistas.BajaEmpleadoDeSupervisor;
 import tienda.vistas.BajaEmpleadoVista;
 import tienda.vistas.BajaProductoVista;
+import tienda.vistas.CrearCargaVista;
+import tienda.vistas.CrearFacturaVista;
 import tienda.vistas.ListaCargasVista;
 import tienda.vistas.ListaEmpleadosVista;
 import tienda.vistas.ListaFacturasVista;
@@ -154,7 +158,7 @@ public class PantallaInicio extends JFrame implements ActionListener {
         JMenu CargaMenu = new JMenu("Cargas");
         menuBar.add(CargaMenu);
 
-        CrearCargaMenuItem = new JMenuItem("CrearCarga");
+        CrearCargaMenuItem = new JMenuItem("Crear Carga");
         CrearCargaMenuItem.setHorizontalAlignment(SwingConstants.LEFT);
         CargaMenu.add(CrearCargaMenuItem);
         CrearCargaMenuItem.addActionListener(this);
@@ -257,6 +261,30 @@ public class PantallaInicio extends JFrame implements ActionListener {
         else if (e.getSource() == ListaCargasMenuItem) {
         	System.out.println("Listando Cargas");
         	ListaCargasVista a = new ListaCargasVista();
+        	setContentPane(a);
+            setVisible(true);
+        }
+        else if (e.getSource() == AltaSupervisorMenuItem) {
+        	System.out.println("Alta Supervisor");
+        	AltaSupervisorVista a = new AltaSupervisorVista();
+        	setContentPane(a);
+            setVisible(true);
+        }
+        else if (e.getSource() == BajaEmpleadoSupervisorMenuItem) {
+        	System.out.println("Baja de Empleado de Supervisor");
+        	BajaEmpleadoDeSupervisor a = new BajaEmpleadoDeSupervisor();
+        	setContentPane(a);
+            setVisible(true);
+        }
+        else if (e.getSource() == CrearFacturaMenuItem) {
+        	System.out.println("Crear Factura");
+        	CrearFacturaVista a = new CrearFacturaVista();
+        	setContentPane(a);
+            setVisible(true);
+        }
+        else if (e.getSource() == CrearCargaMenuItem) {
+        	System.out.println("Crear Carga");
+        	CrearCargaVista a = new CrearCargaVista();
         	setContentPane(a);
             setVisible(true);
         }

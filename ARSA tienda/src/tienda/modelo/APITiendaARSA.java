@@ -73,8 +73,8 @@ public class APITiendaARSA {
 		return tienda.crearFactura(dni);
 	}
 	
-	/*  */public void crearCarga(String dni) {
-		tienda.crearCarga(dni);
+	/*  */public void crearCarga(String dni, ArrayList<Producto> listaProducto) {
+		tienda.crearCarga(dni,listaProducto);
 	}
 	
 	/* */public void annadirProductoFactura(Factura factura,String nombreProducto) {
@@ -112,7 +112,14 @@ public class APITiendaARSA {
 			if (listaEmpleados.get(i) instanceof Supervisor) {
 				listaEmpleadosArray[i][6]=((Supervisor) listaEmpleados.get(i)).getSeccion();
 				for (Empleado x: ((Supervisor) listaEmpleados.get(i))) {
-					listaEmpleadosArray[i][7]+=x.getCodEmpleado()+"\n";
+					int cont=1;
+					if (cont==1) {
+						listaEmpleadosArray[i][7]=x.getCodEmpleado()+"\n";
+					}
+					else {
+						listaEmpleadosArray[i][7]+=x.getCodEmpleado()+"\n";
+					}
+					cont++;
 				}
 			}
 		}
@@ -140,7 +147,14 @@ public class APITiendaARSA {
 			listaCargasArray[i][1]=listaCargas.get(i).getEmpleado().getCodEmpleado();
 			ArrayList<Producto> listaProductos=listaCargas.get(i).getListaProductos();
 			for (Producto x: listaProductos) {
-				listaCargasArray[i][2]+=x.getCodProducto()+"\n";
+				int cont=1;
+				if (cont==1) {
+					listaCargasArray[i][2]=x.getCodProducto()+"\n";
+				}
+				else {
+					listaCargasArray[i][2]+=x.getCodProducto()+"\n";
+				}
+				cont++;
 			}
 		}
 		return listaCargasArray;
@@ -155,7 +169,14 @@ public class APITiendaARSA {
 			listaFacturasArray[i][2]=Double.toString(listaFacturas.get(i).getPrecio());
 			ArrayList<Producto> listaProductos=listaFacturas.get(i).getListaProductos();
 			for (Producto x: listaProductos) {
-				listaFacturasArray[i][3]+=x.getCodProducto()+"\n";
+				int cont=1;
+				if (cont==1) {
+					listaFacturasArray[i][3]=x.getCodProducto()+"\n";
+				}
+				else {
+					listaFacturasArray[i][3]+=x.getCodProducto()+"\n";
+				}
+				cont++;
 			}
 		}
 		return listaFacturasArray;

@@ -43,66 +43,66 @@ public class AltaSupervisorVista extends JPanel implements ActionListener {
 		JLabel DNILabel = new JLabel("DNI");
 		DNILabel.setHorizontalAlignment(SwingConstants.CENTER);
 		DNILabel.setFont(new Font("Tahoma", Font.BOLD, 11));
-		DNILabel.setBounds(45, 65, 105, 14);
+		DNILabel.setBounds(45, 57, 105, 14);
 		add(DNILabel);
 		
 		DNItextfield = new JTextField();
 		DNItextfield.setHorizontalAlignment(SwingConstants.CENTER);
 		DNItextfield.setColumns(10);
-		DNItextfield.setBounds(160, 62, 226, 20);
+		DNItextfield.setBounds(160, 54, 226, 20);
 		add(DNItextfield);
 		
 		JLabel NombreLabel = new JLabel("Nombre");
 		NombreLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		NombreLabel.setFont(new Font("Tahoma", Font.BOLD, 11));
-		NombreLabel.setBounds(45, 95, 105, 14);
+		NombreLabel.setBounds(45, 87, 105, 14);
 		add(NombreLabel);
 		
 		NombretextField = new JTextField();
 		NombretextField.setHorizontalAlignment(SwingConstants.CENTER);
 		NombretextField.setColumns(10);
-		NombretextField.setBounds(160, 93, 226, 20);
+		NombretextField.setBounds(160, 85, 226, 20);
 		add(NombretextField);
 		
 		JLabel PuestoLabel = new JLabel("Puesto y Seccion");
 		PuestoLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		PuestoLabel.setFont(new Font("Tahoma", Font.BOLD, 11));
-		PuestoLabel.setBounds(45, 127, 105, 14);
+		PuestoLabel.setBounds(45, 119, 105, 14);
 		add(PuestoLabel);
 		
 		TipoEmpleadotextField = new JTextField();
 		TipoEmpleadotextField.setHorizontalAlignment(SwingConstants.CENTER);
 		TipoEmpleadotextField.setColumns(10);
-		TipoEmpleadotextField.setBounds(160, 124, 105, 20);
+		TipoEmpleadotextField.setBounds(160, 116, 105, 20);
 		add(TipoEmpleadotextField);
 		
 		JLabel SueldoLabel = new JLabel("Sueldo");
 		SueldoLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		SueldoLabel.setFont(new Font("Tahoma", Font.BOLD, 11));
-		SueldoLabel.setBounds(45, 158, 105, 14);
+		SueldoLabel.setBounds(45, 150, 105, 14);
 		add(SueldoLabel);
 		
 		SueldotextField = new JTextField();
 		SueldotextField.setHorizontalAlignment(SwingConstants.CENTER);
 		SueldotextField.setColumns(10);
-		SueldotextField.setBounds(160, 155, 226, 20);
+		SueldotextField.setBounds(160, 147, 226, 20);
 		add(SueldotextField);
 		
 		JLabel TurnoLabel = new JLabel("Turno");
 		TurnoLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		TurnoLabel.setFont(new Font("Tahoma", Font.BOLD, 11));
-		TurnoLabel.setBounds(45, 189, 105, 14);
+		TurnoLabel.setBounds(45, 181, 105, 14);
 		add(TurnoLabel);
 		
 		TurnotextField = new JTextField();
 		TurnotextField.setHorizontalAlignment(SwingConstants.CENTER);
 		TurnotextField.setColumns(10);
-		TurnotextField.setBounds(160, 186, 226, 20);
+		TurnotextField.setBounds(160, 178, 226, 20);
 		add(TurnotextField);
 		
 		btnSiguiente = new JButton("Enviar");
 		btnSiguiente.setBackground(new Color(255, 51, 102));
-		btnSiguiente.setBounds(224, 216, 89, 23);
+		btnSiguiente.setBounds(224, 208, 89, 23);
 		add(btnSiguiente);
 		btnSiguiente.addActionListener(this);
 		
@@ -113,42 +113,42 @@ public class AltaSupervisorVista extends JPanel implements ActionListener {
 		
 		btnAadir = new JButton("Añadir Empleado");
 		btnAadir.setBackground(new Color(102, 153, 255));
-		btnAadir.setBounds(160, 313, 226, 23);
+		btnAadir.setBounds(160, 305, 226, 23);
 		add(btnAadir);
 		btnAadir.addActionListener(this);
 		
 		JSeparator separator = new JSeparator();
-		separator.setBounds(160, 248, 226, 8);
+		separator.setBounds(160, 240, 226, 8);
 		add(separator);
 		
 		JLabel lblDniEmpleado = new JLabel("DNI Supervisor");
 		lblDniEmpleado.setHorizontalAlignment(SwingConstants.CENTER);
 		lblDniEmpleado.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblDniEmpleado.setBounds(160, 260, 96, 14);
+		lblDniEmpleado.setBounds(160, 252, 96, 14);
 		add(lblDniEmpleado);
 		
 		textField = new JTextField();
 		textField.setHorizontalAlignment(SwingConstants.CENTER);
 		textField.setColumns(10);
-		textField.setBounds(160, 280, 96, 20);
+		textField.setBounds(160, 272, 96, 20);
 		add(textField);
 		
 		JLabel lblDniEmpleado_1 = new JLabel("DNI Empleado");
 		lblDniEmpleado_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblDniEmpleado_1.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblDniEmpleado_1.setBounds(291, 260, 95, 14);
+		lblDniEmpleado_1.setBounds(291, 252, 95, 14);
 		add(lblDniEmpleado_1);
 		
 		textField_1 = new JTextField();
 		textField_1.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_1.setColumns(10);
-		textField_1.setBounds(291, 280, 95, 20);
+		textField_1.setBounds(291, 272, 95, 20);
 		add(textField_1);
 		
 		seccionTextField = new JTextField();
 		seccionTextField.setHorizontalAlignment(SwingConstants.CENTER);
 		seccionTextField.setColumns(10);
-		seccionTextField.setBounds(281, 124, 105, 20);
+		seccionTextField.setBounds(281, 116, 105, 20);
 		add(seccionTextField);
 		
 	}
@@ -165,6 +165,7 @@ public class AltaSupervisorVista extends JPanel implements ActionListener {
 				String seccion = seccionTextField.getText();
 				a.altaSupervisor(nombre, dni, puesto, sueldo, turno, seccion);
 				JOptionPane.showMessageDialog(JOptionPane.getFrameForComponent(btnSiguiente),"Alta Correcta");
+				btnSiguiente.setVisible(false);
 			}catch(Exception exception) {
 				System.out.println(exception.getMessage());
 				JOptionPane.showMessageDialog(JOptionPane.getFrameForComponent(btnSiguiente),"Formato incorrecto"); 	

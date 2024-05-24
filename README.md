@@ -23,7 +23,6 @@ CONTENIDO
 - Vistas:
   - Supervisor:
     - AltaSupervisor
-    - ---
       
   - Empleados:
     - ActualizarEmpleado

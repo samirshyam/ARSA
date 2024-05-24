@@ -6,13 +6,13 @@ Aplicación ARSA
 FUNCIONALIDAD
 ----------------------------------------------
 
--Gestión de empleados
--Gestión de productos
--Generación de facturas
--Gestión de cargas de productos
--Funcionalidades para supervisores
--Interfaz de usuario intuitiva
--Compatibilidad multiplataforma
+- Gestión de empleados
+- Gestión de productos
+- Generación de facturas
+- Gestión de cargas de productos
+- Funcionalidades para supervisores
+- Interfaz de usuario intuitiva
+- Compatibilidad multiplataforma
 
 
 ----------------------------------------------

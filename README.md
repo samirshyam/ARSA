@@ -1,15 +1,54 @@
 ----------------------------------------------
 PROYECTO ENTORNOS DE DESARROLLO Y PROGRAMACIÓN
 Aplicación ARSA
-- Version Actual 0.4
+- Version Actual 0.10
+----------------------------------------------
+FUNCIONALIDAD
+----------------------------------------------
+
+Por redactar.
+
 ----------------------------------------------
 CONTENIDO
-- (Por redactar)
+----------------------------------------------
+- Clases:
+  - ApiTiendaARSA
+  - Carga
+  - Empleado
+  - Factura
+  - Producto
+  - Supervisor
+  - Tienda
+      
+- Vistas:
+  - Supervisor:
+    - AltaSupervisor
+      
+  - Empleados:
+    - ActualizarEmpleado
+    - AltaEmpleado
+    - BajaEmpleado
+      
+  - Productos:
+    - AltaProducto
+    - BajaProducto
+    - ActualizarProducto
+    - 
+  - Listas:
+    - ListaCargas
+    - ListaEmpleados
+    - ListaFacturas
+    - ListaProductos
+   
+  - Otros:
+    - CrearCarga
+    - CrearFactura
 
 ----------------------------------------------
-Participantes:
+PARTICIPANTES
+----------------------------------------------
 
-- Samir
-- Rubén
-- Arturo
-- Aldo
+- A rturo
+- R ubén
+- S amir
+- A ldo
